@@ -1,9 +1,11 @@
-import App from "./App";
+import Root from "./Root";
 import React from "react";
 import { theme } from "./theme";
 import { RecoilRoot } from "recoil";
 import ReactDOM from "react-dom/client";
 import { createGlobalStyle, ThemeProvider } from "styled-components";
+import { RouterProvider } from "react-router-dom";
+import router from "./Router";
 
 const GlobalStyle = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400&display=swap');
@@ -78,7 +80,7 @@ root.render(
     <RecoilRoot>
       <ThemeProvider theme={theme}>
         <GlobalStyle />
-        <App />
+        <RouterProvider router={router} />
       </ThemeProvider>
     </RecoilRoot>
   </React.StrictMode>
